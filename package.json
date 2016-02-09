@@ -1,0 +1,35 @@
+{
+  "name": "universal-react-app",
+  "version": "0.0.0",
+  "description": "Building a live Twitter Stream using React and Node",
+  "main": "app.js",
+  "scripts": {
+    "watch": "watchify app.js -o public/js/bundle.js -v",
+    "browserify": "browserify app.js | uglifyjs > public/js/bundle.js",
+    "build": "npm run browserify ",
+    "start": "npm install"
+  },
+  "author": "Suraksha Pai",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "~6.0.3",
+    "nodemon": "^1.2.1",
+    "reactify": "~0.14.0",
+    "uglify-js": "~2.4.15",
+    "watchify": "^3.1.1"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^4.4.2",
+    "node-jsx": "^0.13.3",
+    "react": "^0.14.7",
+    "socket.io": "^1.4.5",
+    "twitter": "^1.2.5"
+  }
+}
